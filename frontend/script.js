@@ -10,8 +10,7 @@
    request to LibreTranslate. Change this if you deploy the
    backend somewhere other than localhost.
 ----------------------------------------------------------- */
-const BACKEND_URL = "http://localhost:5000/translate";
-
+const BACKEND_URL = "https://linguabridge-d34r.onrender.com/translate";
 /* -----------------------------------------------------------
    1. LANGUAGE LIST
    Each language has a "name" (shown to the user) and a "code"
