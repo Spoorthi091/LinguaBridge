@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinguaBridge | Language Translation Tool</title>
+
+  <!-- Google Fonts: Poppins for headings, Inter for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons (copy, speaker, swap, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Decorative background blobs (pure CSS, no images needed) -->
+  <div class="bg-shape shape-one"></div>
+  <div class="bg-shape shape-two"></div>
+
+  <main class="app-wrapper">
+
+    <!-- ===== Header / Branding ===== -->
+    <header class="app-header">
+      <div class="logo">
+        <i class="fa-solid fa-language"></i>
+        <span>LinguaBridge</span>
+      </div>
+      <p class="tagline">Fast, free, and simple text translation for everyone</p>
+    </header>
+
+    <!-- ===== Main Translator Card ===== -->
+    <section class="translator-card">
+
+      <!-- Language selection row -->
+      <div class="language-bar">
+
+        <div class="lang-select-group">
+          <label for="sourceLang">From</label>
+          <select id="sourceLang" class="lang-select">
+            <!-- Options injected dynamically by script.js -->
+          </select>
+        </div>
+
+        <!-- Swap languages button -->
+        <button id="swapBtn" class="swap-btn" title="Swap languages" aria-label="Swap languages">
+          <i class="fa-solid fa-right-left"></i>
+        </button>
+
+        <div class="lang-select-group">
+          <label for="targetLang">To</label>
+          <select id="targetLang" class="lang-select">
+            <!-- Options injected dynamically by script.js -->
+          </select>
+        </div>
+      </div>
+
+      <!-- Text input / output row -->
+      <div class="text-panels">
+
+        <!-- Source text panel -->
+        <div class="panel">
+          <textarea
+            id="sourceText"
+            class="text-area"
+            placeholder="Type or paste your text here..."
+            maxlength="500"
+          ></textarea>
+          <div class="panel-footer">
+            <span id="charCount" class="char-counter">0 / 500</span>
+            <button id="clearBtn" class="icon-text-btn" title="Clear text">
+              <i class="fa-solid fa-trash"></i> Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- Translated text panel -->
+        <div class="panel">
+          <div id="outputText" class="text-area output-area" aria-live="polite">
+            <span class="placeholder-text">Translation will appear here...</span>
+          </div>
+
+          <!-- Loading spinner shown while backend request is in progress -->
+          <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <span>Translating...</span>
+          </div>
+
+          <div class="panel-footer">
+            <span class="char-counter output-label">Result</span>
+            <div class="output-actions">
+              <button id="speakBtn" class="icon-text-btn" title="Listen to translation">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+              <button id="copyBtn" class="icon-text-btn" title="Copy translation">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Error message box (hidden by default) -->
+      <div id="errorBox" class="error-box hidden">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span id="errorMessage">Something went wrong. Please try again.</span>
+      </div>
+
+      <!-- Translate button -->
+      <button id="translateBtn" class="translate-btn">
+        <i class="fa-solid fa-language"></i> Translate
+      </button>
+
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="app-footer">
+      <p>Built with HTML, CSS &amp; JavaScript &middot; Node.js/Express backend &middot; Powered by LibreTranslate</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
