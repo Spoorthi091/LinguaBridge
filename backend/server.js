@@ -26,21 +26,8 @@ const PORT = process.env.PORT || 5000;
 // Parse incoming JSON request bodies (e.g. { "text": "...", ... })
 app.use(express.json());
 
-// Configure CORS so only trusted frontend origins can call this API.
-// CORS_ORIGIN can be a comma-separated list, e.g.
-//   "http://localhost:3000,http://127.0.0.1:5500"
-// Falls back to "*" (allow all) if not set, which is convenient for
-// local development but should be restricted in production.
-const allowedOrigins = process.env.CORS_ORIGIN
-  ? process.env.CORS_ORIGIN.split(",").map((origin) => origin.trim())
-  : "*";
+app.use(cors());
 
-app.use(
-  cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST"],
-  })
-);
 
 /* -----------------------------------------------------------
    ROUTES
