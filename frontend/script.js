@@ -11,6 +11,7 @@
    backend somewhere other than localhost.
 ----------------------------------------------------------- */
 const BACKEND_URL = "https://linguabridge-d34r.onrender.com/translate";
+
 /* -----------------------------------------------------------
    1. LANGUAGE LIST
    Each language has a "name" (shown to the user) and a "code"
