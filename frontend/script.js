@@ -15,8 +15,11 @@ const BACKEND_URL = "https://linguabridge-d34r.onrender.com/translate";
 /* -----------------------------------------------------------
    1. LANGUAGE LIST
    Each language has a "name" (shown to the user) and a "code"
+   Each language has a "name" (shown to the user) and a "code"
    (used by the translation API). Feel free to add more!
------------------------------------------------------------ */
+----------------------------------------------------------- */   
+  
+
 const LANGUAGES = [
   { code: "en", name: "English" },
   { code: "hi", name: "Hindi" },
